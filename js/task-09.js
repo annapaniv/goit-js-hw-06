@@ -29,7 +29,10 @@ const el = {
 
 el.button.addEventListener('click', onclick);
 
+
+
 function onclick(evt) {
-  el.body.style.backgroundColor = getRandomHexColor();
-  el.color.textContent = getRandomHexColor();
+  let colorRandom = getRandomHexColor();
+  el.body.style.backgroundColor = colorRandom;
+  el.color.textContent = colorRandom;
 }

@@ -16,16 +16,17 @@ const ingredients = [
   'Condiments',
 ];
 
-const itemIngredient = ingredients.forEach(ingredient => {
 
-  const itemEl = document.createElement("li");
-  itemEl.textContent = ingredient;
-  itemEl.classList.add('item');
-
-  const totalItemList = document.querySelector('#ingredients');
-  totalItemList.append(itemEl);
+  const listIngradients = document.querySelector('#ingredients');
+  const itemIngredients = [];
 
 
-  console.log(itemEl);
+function createItem (arr){
+  arr.map((item) => {const listLi = document.createElement('li');
+  listLi.classList.add('item');
+  listLi.textContent = item;
+  itemIngredients.push(listLi)}).join('');
+  
+listIngradients.append(...itemIngredients);}
 
-});
+createItem(ingredients);
